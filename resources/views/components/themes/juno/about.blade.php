@@ -1,4 +1,4 @@
-@props(['data', 'courses'])
+@props(['data', 'courses', 'experiences'])
 
 @if($is_active)
 <div>
@@ -6,7 +6,7 @@
 
     <div class="grid w-full grid-cols-1 justify-between gap-8 md:grid-cols-[2fr_1fr]">
         <!-- Bio Column -->
-        <div class="flex flex-col space-y-6">
+        <div class="flex flex-col space-y-10">
             <div class="h-full">
                 <h3 class="flex items-center gap-2 text-sm font-medium text-secondary-900 dark:text-secondary-100">
                     <x-ui.ionicon icon="rocket-outline" />
@@ -26,6 +26,61 @@
                     </a>
                 </div>
                 @endif
+            </div>
+
+            <div>
+                <h3 class="flex items-center gap-2 text-sm font-medium text-secondary-900 dark:text-secondary-100">
+                    <x-ui.ionicon icon="briefcase-outline" />
+                    experience
+                </h3>
+
+                <div class="relative mt-4 h-full flex-grow">
+                    <div class="absolute bottom-2 left-0 top-2 w-px bg-secondary-200 dark:bg-secondary-800"></div>
+
+                    <div class="relative h-full space-y-6 py-2">
+                        @forelse ($experiences as $experience)
+                        <div class="relative pl-6">
+                            <div
+                                class="absolute -left-1 top-3 h-2.5 w-2.5 rounded-full border-2 border-secondary-200 bg-white dark:border-secondary-800 dark:bg-secondary-900">
+                            </div>
+
+                            <div class="flex-1">
+                                <h3 class="text-sm font-semibold text-secondary-900 dark:text-secondary-100">
+                                    {{ $experience->title }}
+                                </h3>
+                                <p class="mt-1 text-sm text-secondary-700 dark:text-secondary-300">
+                                    {{ $experience->company }}
+                                </p>
+                                <p class="mt-1 text-xs text-secondary-500 dark:text-secondary-400">
+                                    {{ $experience->start_date?->format('M, Y') }} -
+                                    {{ $experience->currently_working ? __('Present') : $experience->end_date?->format('M, Y') }}
+                                </p>
+
+                                @if ($experience->skills)
+                                <div class="mt-2 flex flex-wrap gap-1.5">
+                                    @foreach (explode(',', $experience->skills) as $skill)
+                                    <span
+                                        class="rounded-full border border-secondary-200 px-2 py-0.5 text-xs text-secondary-600 dark:border-secondary-800 dark:text-secondary-400">
+                                        {{ trim($skill) }}
+                                    </span>
+                                    @endforeach
+                                </div>
+                                @endif
+
+                                @if ($experience->description)
+                                <p class="mt-2 text-xs leading-relaxed text-secondary-600 dark:text-secondary-400">
+                                    {{ $experience->description }}
+                                </p>
+                                @endif
+                            </div>
+                        </div>
+                        @empty
+                        <div class="text-sm text-secondary-600 dark:text-secondary-400">
+                            {{ __('No experience added yet.') }}
+                        </div>
+                        @endforelse
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -4,6 +4,7 @@ namespace App\View\Components\Themes\Juno;
 
 use App\Filament\Fabricator\PageBlocks\Component\Module;
 use App\Models\Course;
+use App\Models\Experience;
 use App\Models\Section;
 use App\Models\User;
 use App\Traits\SectionLoader;
@@ -23,8 +24,9 @@ class About extends Component
     public function render(): View|Closure|string
     {
         return view('components.themes.juno.about', [
-            'data'    => User::with('profile')->first(),
-            'courses' => Course::orderBy('start_date', 'desc')->get(),
+            'data'        => User::with('profile')->first(),
+            'courses'     => Course::orderBy('start_date', 'desc')->get(),
+            'experiences' => Experience::orderBy('start_date', 'desc')->get(),
         ]);
     }
 }

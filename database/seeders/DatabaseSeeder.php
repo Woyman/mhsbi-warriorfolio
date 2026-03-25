@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Alert;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Experience;
 use App\Models\Mail;
 use App\Models\Newsletter;
 use App\Models\Project;
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
         Mail::factory()->create();
         Newsletter::factory()->create();
         Course::factory()->create();
+        Experience::factory(3)->create();
         Category::factory(10)->create();
         // Project::factory(10)->create();
         Alert::factory()->create();
