@@ -9,7 +9,7 @@
         "@tailwindcss/forms": "^0.5.7",
         "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.17",
-        "axios": "^1.6.1",
+        "axios": "1.13.6",
         "cropperjs": "^1.6.1",
         "daisyui": "^5.0.9",
         "flowbite": "^2.2.1",
