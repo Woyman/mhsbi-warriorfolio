@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Category;
 use App\Models\Page;
-use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Hidden;
@@ -38,7 +37,17 @@ class PostResource extends Resource
 
     public static function getNavigationLabel(): string
     {
-        return __('Notes');
+        return notesModuleLabel();
+    }
+
+    public static function getModelLabel(): string
+    {
+        return notesEntryLabel();
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return notesModuleLabel();
     }
 
     public static function getNavigationGroup(): ?string
@@ -62,8 +71,8 @@ class PostResource extends Resource
         return $form
             ->columns(4)
             ->schema([
-                Section::make(__('Notes Post'))
-                    ->description(__('Write, edit and manage your Notes Post.'))
+                Section::make(notesModuleLabel().' '.__('Post'))
+                    ->description(__('Write, edit and manage your :label posts.', ['label' => notesModuleLabel()]))
                     ->columnSpan(3)
                     ->icon('heroicon-o-pencil')
                     ->schema([
@@ -134,7 +143,7 @@ class PostResource extends Resource
                                         Section::make('Fast Create Category.')
                                             ->columns(2)
                                             ->icon('heroicon-o-tag')
-                                            ->description('Create a new category for Notes. Edit other settings of this category later.')
+                                            ->description(__('Create a new category for :label. Edit other settings of this category later.', ['label' => notesModuleLabel()]))
                                             ->schema([
                                                 TextInput::make('name')
                                                     ->lazy()
@@ -155,11 +164,11 @@ class PostResource extends Resource
                                     ])
                                     ->createOptionUsing(function (array $data): int {
                                         $category = Category::create([
-                                            'name'       => $data['name'],
-                                            'slug'       => $data['slug'],
-                                            'is_blog'    => true,
+                                            'name' => $data['name'],
+                                            'slug' => $data['slug'],
+                                            'is_blog' => true,
                                             'is_project' => false,
-                                            'is_active'  => true,
+                                            'is_active' => true,
                                         ]);
 
                                         return $category->getKey();
@@ -222,14 +231,14 @@ class PostResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->emptyStateHeading(__('No Notes'))
+            ->emptyStateHeading(__('No :label yet', ['label' => notesModuleLabel()]))
             ->emptyStateIcon('heroicon-o-pencil')
             ->query(
                 Page::query()
                     ->where('style', 'blog')
             )
             ->recordClasses(fn (Page $record) => match ($record?->is_active) {
-                0       => 'opacity-50 dark:opacity-30',
+                0 => 'opacity-50 dark:opacity-30',
                 default => null,
             })
             ->columns([
@@ -306,9 +315,9 @@ class PostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index'  => Pages\ListPosts::route('/'),
+            'index' => Pages\ListPosts::route('/'),
             'create' => Pages\CreatePost::route('/create'),
-            'edit'   => Pages\EditPost::route('/{record}/edit'),
+            'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
     }
 }

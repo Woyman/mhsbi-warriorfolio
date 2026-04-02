@@ -49,7 +49,9 @@
     @endif
     @endforeach
     @else
-    <x-ui.empty-section :message="'No posts yet.'" :auth="'Create a new Note in your Dashboard.'" />
+    <x-ui.empty-section
+        :message="'No posts yet.'"
+        :auth="__('Create a new :item in your Dashboard.', ['item' => notesEntryLabel()])" />
     @endif
 
     <div class="py-8">

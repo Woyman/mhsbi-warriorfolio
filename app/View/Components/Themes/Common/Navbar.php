@@ -26,7 +26,9 @@ class Navbar extends Component
     public function __construct()
     {
         $settings = Setting::first(['design'])->value('design');
-        $this->navigation = Navigation::first(['content'])->value('content');
+        $this->navigation = navigationContentWithNotesModuleLabels(
+            Navigation::first(['content'])->value('content')
+        );
         $this->is_menu_highlighted = $settings['is_menu_highlighted'] ?? false;
         $this->darkmode_is_active = $settings['darkmode_is_active'] ?? true;
         $this->line_beam_is_active = $settings['line_beam_is_active'] ?? false;

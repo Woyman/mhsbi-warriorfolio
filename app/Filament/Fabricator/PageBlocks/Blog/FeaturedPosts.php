@@ -16,8 +16,8 @@ class FeaturedPosts extends PageBlock
             ->icon('heroicon-o-newspaper')
             ->label(__('Latest Posts'))
             ->schema([
-                Section::make('Core: Notes Latest Posts')
-                    ->description('Latest posts from your Notes.')
+                Section::make(__('Core: :label latest posts', ['label' => notesModuleLabel()]))
+                    ->description(__('Latest posts from your :label.', ['label' => notesModuleLabel()]))
                     ->icon('heroicon-o-pencil')
                     ->collapsed()
                     ->schema([
