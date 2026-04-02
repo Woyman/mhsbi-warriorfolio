@@ -1,7 +1,7 @@
 <p align="center">
   <h1 align="center">Warriorfolio 2 · Custom fork</h1>
   <p align="center">A Modern Portfolio & Blog Platform Built with Laravel</p>
-  <p align="center"><sub>Fork of <a href="https://github.com/mviniciusca/warriorfolio">mviniciusca/warriorfolio</a> — customized for personal needs.</sub></p>
+  <p align="center"><sub>Fork of <a href="https://github.com/mviniciusca/warriorfolio">Warriorfolio</a> <strong>v2.2.3</strong> — customized for personal needs.</sub></p>
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
 
 Warriorfolio is a powerful, modular portfolio and blog platform that empowers users to create personalized, professional websites with ease. Built on Laravel's robust foundation, it combines flexibility with user-friendly administration.
 
-**Repositori ini** adalah clone/fork dari [Warriorfolio](https://github.com/mviniciusca/warriorfolio) (MIT) yang disesuaikan untuk kebutuhan pengembangan pribadi. Fitur inti dan arsitektur mengikuti upstream; dokumentasi resmi tetap relevan untuk hal yang tidak diubah di sini — lihat [Warriorfolio documentation](https://warriorfolio.vercel.app/).
+**This repository** is a clone/fork of [Warriorfolio](https://github.com/mviniciusca/warriorfolio) **version [2.2.3](https://github.com/mviniciusca/warriorfolio/releases/tag/v2.2.3)** (MIT), customized for personal use. Core features and architecture match that upstream baseline unless noted below; the official docs still apply to anything unchanged here — see [Warriorfolio documentation](https://warriorfolio.vercel.app/).
 
 **Key Highlights:**
 - **Modular Architecture** - Components integrate seamlessly like building blocks
@@ -33,13 +33,15 @@ Warriorfolio is a powerful, modular portfolio and blog platform that empowers us
 
 ## Customizations in this fork
 
-Perubahan pada versi fork ini dibanding upstream:
+**Upstream baseline:** [Warriorfolio v2.2.3](https://github.com/mviniciusca/warriorfolio/releases/tag/v2.2.3).
 
-| Area | Perubahan |
-|------|-----------|
-| **Profile** | Section baru **Experience** — menampilkan pengalaman kerja/profesional di area profil (themes yang mendukung partial Experience). |
+Changes in this fork compared to that version:
 
-Untuk riwayat rilis resmi Warriorfolio (Juno, gallery, search, dll.), lihat [Upstream releases](https://github.com/mviniciusca/warriorfolio/releases).
+| Area | Change |
+|------|--------|
+| **Profile** | New **Experience** section — work/professional experience on the profile area (themes that include the Experience partial). |
+
+For official Warriorfolio release history (Juno, gallery, search, and more), see [upstream releases](https://github.com/mviniciusca/warriorfolio/releases).
 
 ---
 
@@ -60,7 +62,7 @@ Untuk riwayat rilis resmi Warriorfolio (Juno, gallery, search, dll.), lihat [Ups
 - Customizable hero sections with multiple layouts
 
 ### Professional Tools
-- **Experience (fork)** — section pengalaman di profil, selaras dengan data resume/kontrol panel
+- **Experience (this fork)** — experience section on the profile, aligned with resume/control panel data
 - Resume/CV management and download
 - LinkedIn "Open to Work" badge integration
 - Skills and certifications display
@@ -95,11 +97,11 @@ git clone https://github.com/Woyman/mhsbi-warriorfolio.git
 cd mhsbi-warriorfolio
 ```
 
-Lanjutkan dari langkah **Install dependencies** di bawah (sama seperti upstream).
+Continue with **Install dependencies** below (same as upstream).
 
 ### Upstream (official Warriorfolio) via Composer
 
-Jika ingin proyek vanilla tanpa kustomisasi fork ini:
+If you want the vanilla project without this fork’s customizations:
 
 ```bash
 composer create-project mviniciusca/warriorfolio
@@ -216,7 +218,7 @@ Warriorfolio is built with industry-leading technologies:
 
 ## Contributing
 
-Untuk perbaikan bug dan fitur **inti Warriorfolio**, pertimbangkan berkontribusi ke [repositori upstream](https://github.com/mviniciusca/warriorfolio). Fork pribadi ini mengikuti alur kontribusi umum di bawah untuk eksperimen lokal.
+For bugs and features in **core Warriorfolio**, consider contributing to the [upstream repository](https://github.com/mviniciusca/warriorfolio). This personal fork follows the general contribution flow below for local experiments.
 
 We welcome contributions from the community! Here's how you can help:
 
@@ -254,7 +256,7 @@ Warriorfolio is open-source software licensed under the [MIT license](LICENSE).
 
 ## Acknowledgments
 
-**Upstream:** Proyek ini berbasis [**Warriorfolio**](https://github.com/mviniciusca/warriorfolio) oleh [Marcos Coelho](https://twitter.com/marcosvca_) — terima kasih kepada maintainer dan komunitas atas karya sumber terbukanya.
+**Upstream:** This project is based on [**Warriorfolio**](https://github.com/mviniciusca/warriorfolio) by [Marcos Coelho](https://twitter.com/marcosvca_) — thanks to the maintainer and community for the open-source work.
 
 **Special Thanks (upstream):**
 - Warriorfolio 1 users and early adopters
@@ -277,6 +279,6 @@ Warriorfolio is open-source software licensed under the [MIT license](LICENSE).
 
 <p align="center">
   <strong>Upstream: <a href="https://github.com/mviniciusca/warriorfolio">Warriorfolio</a> by <a href="https://twitter.com/marcosvca_">Marcos Coelho</a></strong><br>
-  <sub>Fork ini menyertakan kustomisasi lokal; lisensi tetap mengikuti <a href="LICENSE">MIT</a> dari proyek dasar.</sub>
+  <sub>This fork includes local customizations; licensing remains <a href="LICENSE">MIT</a> per the base project.</sub>
 </p>
 
