@@ -23,12 +23,6 @@ Warriorfolio is a powerful, modular portfolio and blog platform that empowers us
 
 **This repository** is a clone/fork of [Warriorfolio](https://github.com/mviniciusca/warriorfolio) **version [2.2.3](https://github.com/mviniciusca/warriorfolio/releases/tag/v2.2.3)** (MIT), customized for personal use. Core features and architecture match that upstream baseline unless noted below; the official docs still apply to anything unchanged here — see [Warriorfolio documentation](https://warriorfolio.vercel.app/).
 
-**Key Highlights:**
-- **Modular Architecture** - Components integrate seamlessly like building blocks
-- **No-Code Management** - 100% managed through an intuitive Control Panel
-- **Flexible Deployment** - From simple landing pages to complex multi-page sites
-- **Professional Results** - Perfect for developers, designers, and creative professionals
-
 ---
 
 ## Customizations in this fork
@@ -67,6 +61,7 @@ For official Warriorfolio release history (Juno, gallery, search, and more), see
 - LinkedIn "Open to Work" badge integration
 - Skills and certifications display
 - Course tracking
+- Experiences
 - Customer/Client showcase
 - Social media integration
 
