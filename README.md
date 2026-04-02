@@ -34,6 +34,7 @@ Changes in this fork compared to that version:
 | Area | Change |
 |------|--------|
 | **Profile** | New **Experience** section — work/professional experience on the profile area (themes that include the Experience partial). |
+| **Blog / Notes** | **Custom module labels** — rename “Notes” / “Note” across admin, front-end, navigation, and blog section copy without a database migration. |
 
 For official Warriorfolio release history (Juno, gallery, search, and more), see [upstream releases](https://github.com/mviniciusca/warriorfolio/releases).
 
@@ -42,7 +43,7 @@ For official Warriorfolio release history (Juno, gallery, search, and more), see
 ## Features
 
 ### Content Management
-- Blog system with password protection and reading time
+- Blog system with password protection, custom header label, and reading time
 - Portfolio/Projects with categories, tags, and SEO optimization
 - Page builder with modular content blocks
 - Newsletter subscription integration
