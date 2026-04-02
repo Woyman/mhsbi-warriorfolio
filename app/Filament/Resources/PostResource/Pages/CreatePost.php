@@ -4,7 +4,6 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
 use App\Models\Post;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Model;
@@ -13,9 +12,9 @@ class CreatePost extends CreateRecord
 {
     protected static string $resource = PostResource::class;
 
-    public function getTitle(): string | Htmlable
+    public function getTitle(): string|Htmlable
     {
-        return __('Create Note');
+        return __('Create :item', ['item' => notesEntryLabel()]);
     }
 
     protected function handleRecordCreation(array $data): Model

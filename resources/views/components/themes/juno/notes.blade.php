@@ -2,7 +2,7 @@
 
 @if($is_active)
 <x-themes.juno.partials.header :$title :$subtitle buttonIcon="newspaper-outline" buttonUrl="/blog" button="View All"
-    subtitle="Sharing thoughts, tutorials, and insights" title="Notes" />
+    subtitle="Sharing thoughts, tutorials, and insights" title="{{ notesModuleLabel() }}" />
 
 <div class="divide-y divide-secondary-200 dark:divide-secondary-800">
     @forelse ($posts as $post)

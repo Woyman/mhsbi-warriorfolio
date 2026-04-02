@@ -28,7 +28,7 @@ class Articles extends Component
                 ->where('is_active', '=', true)
                 ->sortByDesc('created_at')
                 ->take(5),
-                'setting' => Setting::first('blog')->blog,
+                'setting' => blogForFrontDisplay(Setting::first('blog')?->blog ?? []),
             ]);
     }
 }

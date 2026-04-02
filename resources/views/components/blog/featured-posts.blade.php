@@ -25,7 +25,9 @@
             </div>
     </div>
     @if ($posts->count() === 0)
-    <x-ui.empty-section :message="'No Posts Yet.'" :auth="'Create a new Post in your Dashboard.'" />
+    <x-ui.empty-section
+        :message="'No Posts Yet.'"
+        :auth="__('Create a new :item in your Dashboard.', ['item' => notesEntryLabel()])" />
     @endif
     </section>
     </div>

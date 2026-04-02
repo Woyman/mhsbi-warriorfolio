@@ -21,15 +21,15 @@ class EditBlogSettings extends EditRecord
 
     public static function getNavigationLabel(): string
     {
-        return __('Notes Section');
+        return notesModuleLabel().' '.__('Section');
     }
 
-    public function getTitle(): string | Htmlable
+    public function getTitle(): string|Htmlable
     {
-        return __('Notes Section');
+        return notesModuleLabel().' '.__('Section');
     }
 
-    public function getSubheading(): string | Htmlable | null
+    public function getSubheading(): string|Htmlable|null
     {
         return __('Manage your Blog Settings.');
     }
@@ -44,6 +44,18 @@ class EditBlogSettings extends EditRecord
                         Tabs\Tab::make('General')
                             ->icon('heroicon-o-cog')
                             ->schema([
+                                TextInput::make('blog.module_label')
+                                    ->label(__('Module label (admin)'))
+                                    ->maxLength(120)
+                                    ->placeholder(__('Notes'))
+                                    ->prefixIcon('heroicon-o-tag')
+                                    ->helperText(__('Custom name for this module in the admin panel (navigation, list titles, etc.). Leave empty to use the default "Notes".')),
+                                TextInput::make('blog.module_entry_label')
+                                    ->label(__('Singular entry label'))
+                                    ->maxLength(120)
+                                    ->placeholder(__('Note'))
+                                    ->prefixIcon('heroicon-o-document-text')
+                                    ->helperText(__('Used for actions like New / Create / Edit (e.g. "Post", "Article"). Leave empty to use the default "Note".')),
                                 Toggle::make('blog.module_is_active')
                                     ->default(true)
                                     ->helperText(__('To hide your blog system completely, you can disable the module in Application Settings > Core Modules Global Visibility Control '))
@@ -56,7 +68,7 @@ class EditBlogSettings extends EditRecord
                                 Group::make()
                                     ->columns(2)
                                     ->extraAttributes([
-                                        'class'       => 'space-y-4',
+                                        'class' => 'space-y-4',
                                         'description' => __('This module shows your latest posts in your Post Page. All fields are optional.'),
                                     ])
                                     ->schema([
@@ -81,8 +93,8 @@ class EditBlogSettings extends EditRecord
                             ->schema([
                                 Group::make()
                                     ->extraAttributes([
-                                        'class'       => 'space-y-4',
-                                        'description' => __('This module shows your latest posts from your Notes. All fields are optional.'),
+                                        'class' => 'space-y-4',
+                                        'description' => __('This module shows your latest posts from your :label. All fields are optional.', ['label' => notesModuleLabel()]),
                                     ])
                                     ->columns(2)
                                     ->schema([
@@ -117,8 +129,8 @@ class EditBlogSettings extends EditRecord
                             ->schema([
                                 Group::make()
                                     ->extraAttributes([
-                                        'class'       => 'space-y-4',
-                                        'description' => __('Manage your Notes Pages Settings'),
+                                        'class' => 'space-y-4',
+                                        'description' => __('Manage your :label pages settings', ['label' => notesModuleLabel()]),
                                     ])
                                     ->columns(3)
                                     ->schema([
@@ -142,8 +154,8 @@ class EditBlogSettings extends EditRecord
                             ->schema([
                                 Group::make()
                                     ->extraAttributes([
-                                        'class'       => 'space-y-4',
-                                        'description' => __('Manage your Notes Settings and Public Definitions.'),
+                                        'class' => 'space-y-4',
+                                        'description' => __('Manage your :label settings and public definitions.', ['label' => notesModuleLabel()]),
                                     ])
                                     ->columns(3)
                                     ->schema([

@@ -26,8 +26,8 @@ class FeaturedPosts extends Component
     {
         return view('components.blog.featured-posts', [
             'module_blog' => Module::first('blog')->blog,
-            'info'        => Setting::first('blog')->blog,
-            'posts'       => Page::with('post')
+            'info' => blogForFrontDisplay(Setting::first('blog')?->blog ?? []),
+            'posts' => Page::with('post')
                 ->with('user')
                 ->where('is_active', '=', true)
                 ->where('style', '=', 'blog')

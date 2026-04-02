@@ -13,9 +13,9 @@ class EditPost extends EditRecord
 {
     protected static string $resource = PostResource::class;
 
-    public function getTitle(): string | Htmlable
+    public function getTitle(): string|Htmlable
     {
-        return __('Edit Note');
+        return __('Edit :item', ['item' => notesEntryLabel()]);
     }
 
     protected function handleRecordUpdate(Model $record, array $data): Model
@@ -46,7 +46,7 @@ class EditPost extends EditRecord
             Actions\DeleteAction::make()
                 ->size('xs')
                 ->label(__('Delete'))
-                ->modalHeading(__('Delete Note'))
+                ->modalHeading(__('Delete :item', ['item' => notesEntryLabel()]))
                 ->requiresConfirmation()
                 ->icon('heroicon-o-trash'),
         ];

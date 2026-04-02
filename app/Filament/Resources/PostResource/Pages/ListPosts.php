@@ -12,9 +12,9 @@ class ListPosts extends ListRecords
 {
     protected static string $resource = PostResource::class;
 
-    public function getTitle(): string | Htmlable
+    public function getTitle(): string|Htmlable
     {
-        return __('Notes');
+        return notesModuleLabel();
     }
 
     protected function getHeaderActions(): array
@@ -23,7 +23,7 @@ class ListPosts extends ListRecords
             Actions\CreateAction::make()
                 ->icon('heroicon-o-pencil')
                 ->size('sm')
-                ->label(__('New Note')),
+                ->label(__('New :item', ['item' => notesEntryLabel()])),
             Actions\Action::make('view_blog_settings')
                 ->url(route('filament.admin.resources.settings.edit-blog', Setting::first('id')->id))
                 ->color('gray')
